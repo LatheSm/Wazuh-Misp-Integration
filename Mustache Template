@@ -1,0 +1,24 @@
+
+{{#ctx.results.0.hits.hits}}
+
+Monitor {{ctx.monitor.name}} just entered alert status. Please investigate the issue.
+
+  - Trigger: {{ctx.trigger.name}}
+  - Severity: {{ctx.trigger.severity}}
+  - Period start: {{ctx.periodStart}}
+  - Period end: {{ctx.periodEnd}}
+
+  - Timestamp: {{timestamp}}
+  - Agent IP: {{_source.agent.ip}}
+  - Agent Name: {{_source.agent.name}}
+  - Rule Description: {{_source.rule.description}}
+
+  - MISP Category: {{_source.data.misp.category}}
+  - MISP Comment: MISP Event ID {{_source.data.misp.event_id}}
+  - MISP File Path: {{_source.data.misp.file_path}}
+  - MISP Type: {{_source.data.misp.type}}
+  - MISP Value: {{_source.data.misp.value}}
+
+  - Full Log: {{_source.full_log}}
+
+{{/ctx.results.0.hits.hits}}
