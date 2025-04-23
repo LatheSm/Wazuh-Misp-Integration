@@ -1,0 +1,26 @@
+
+ <integration>
+    <name>custom-misp-256_afterhashes</name>
+    <rule_id>550,553,554,594,750,751,752</rule_id>
+    <alert_format>json</alert_format>
+  </integration>
+
+
+
+<ossec_config>
+ 
+ <command>
+    <name>windows-misp-threat</name>
+    <executable>custom-misp-remove-threat.exe</executable>
+    <timeout_allowed>no</timeout_allowed>
+  </command>
+
+  <active-response>
+    <disabled>no</disabled>
+    <command>windows-misp-threat</command>
+    <location>local</location>
+    <rules_id>100624</rules_id>
+  </active-response>
+
+</ossec_config>
+
